@@ -1,7 +1,7 @@
 # Python - Data Structures: Lists, TuplesPython - More Data Structures: Set, Dictionary
 
 ## Description
-> This repository contains scripts that are created as part of the learning objectives of programming at ALX SE programme. The emphasis is on enforcing problem solving skills through programming and other technologies. The `.py` files created are for a deeper understanding of higher level programming in Python.
+> This repository contains scripts that are created as part of the learning objectives of programming at ALX SE programme. The emphasis is on enforcing problem solving skills through programming and other technologies. The `.c` and `.py` files created are for a deeper understanding of higher level programming in Python.
 
 ## Learning Objectives
 * Why Python programming is awesome
