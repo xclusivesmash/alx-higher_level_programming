@@ -3,9 +3,10 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    store = ""
+    key_ = ""
+    maxi = 0
     for k, v in a_dictionary.items():
-        if v == max(list(a_dictionary.values())):
+        if v > maxi:
+            maxi = v
             store = k
-            break
     return store
