@@ -96,17 +96,6 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         return None
 
-    def __eq__(self, __value: object) -> bool:
-        """Compares objects for equality"""
-        if not isinstance(__value, Rectangle):
-            return NotImplemented
-        return self.area() == __value.area()
-
-    def __gt__(self, __value: object) -> bool:
-        if not isinstance(__value, Rectangle):
-            return NotImplemented
-        return self.area() > __value.area()
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Compares two instances of Rectangle class
