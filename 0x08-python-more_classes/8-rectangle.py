@@ -100,14 +100,12 @@ class Rectangle:
         """Compares objects for equality"""
         if not isinstance(__value, Rectangle):
             return NotImplemented
-        return self.__width == __value.__width and \
-            self.__height == __value.__height
+        return self.area() == __value.area()
 
     def __gt__(self, __value: object) -> bool:
         if not isinstance(__value, Rectangle):
             return NotImplemented
-        return self.__width > __value.__width and \
-            self.__height > __value.__height
+        return self.area() > __value.area()
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -124,8 +122,6 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1 == rect_2:
-            return rect_1
-        if rect_1 > rect_2:
+        if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
