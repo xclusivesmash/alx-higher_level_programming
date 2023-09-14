@@ -1,7 +1,7 @@
 DESCRIPTION: None
 
-HOW TO URN THE TEST IN COMMAND LINE:
-    `$ python3 -m doctest -v ./tests/1-my_list.txt | tail -2`
+HOW TO RUN THE TEST IN COMMAND LINE:
+    `$ python3 -m doctest -v ./tests/7-base_geometry.txt | tail -2`
 
 1. IMPORT METHOD TO TEST:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
@@ -58,6 +58,9 @@ Test for different data types except ints:
     TypeError: h must be an integer
     >>> mm = BaseGeometry()
     >>> mm.integer_validator("mm", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: mm must be an integer
 
 Test for invalid number of arguments:
     >>> k = BaseGeometry()
