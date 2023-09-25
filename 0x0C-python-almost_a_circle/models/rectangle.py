@@ -100,7 +100,7 @@ class Rectangle(Base):
         """Prints to STDOUT the rectangle using #."""
         print("\n" * self.y, end="")
         string = "".join(" " * self.x + "#" * self.__width + "\n"
-                             for _ in range(self.__height))
+                         for _ in range(self.__height))
         print(string, end="")
         return None
 
