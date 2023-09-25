@@ -28,47 +28,50 @@ class Rectangle(Base):
             height (int): height of the rectangle."""
         super().__init__(id)
         self.height = height
+        self.width = width
+        self.x = x
+        self.y = y
 
     @property
     def height(self):
-        """Getter."""
+        """Getter: height."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter."""
+        """Setter: height."""
         self.__height = value
         return None
 
     @property
     def width(self):
-        """Getter."""
+        """Getter: width."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter."""
+        """Setter: width."""
         self.__width = value
         return None
 
     @property
     def x(self):
-        """Getter."""
+        """Getter: x."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Setter."""
+        """Setter: x."""
         self.__x = value
         return None
 
     @property
     def y(self):
-        """Getter."""
+        """Getter: y."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Setter."""
+        """Setter: y."""
         self.__y = value
         return None
