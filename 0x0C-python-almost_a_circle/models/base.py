@@ -9,6 +9,8 @@ class Base:
         id (int): input integer.
     Methods:
         __init__(self, id=None)
+        to_json_string(list_dictionaries)
+        save_to_file(cls, list_objs)
     """
     # constants
     __nb_objects = 0
@@ -30,3 +32,16 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             list_dictionaries = list()
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Save json object to file."""
+        filename = "{}.json".format(cls.__name__)
+        with open(filename, mode="w", encoding="utf-8") as f:
+            if list_objs is None:
+                f.write([])
+            else:
+                json_objs = [x.to_dictionary() for x in list_objs]
+                json_objs = cls.to_json_string(json_objs)
+                f.write(json_objs)
+        return None
