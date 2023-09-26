@@ -28,5 +28,5 @@ class Base:
     def to_json_string(list_dictionaries):
         """Serialization method: json"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            list_dictionaries = list()
         return json.dumps(list_dictionaries)
