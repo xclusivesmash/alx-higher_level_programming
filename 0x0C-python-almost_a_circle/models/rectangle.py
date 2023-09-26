@@ -13,14 +13,19 @@ class Rectangle(Base):
         id (int): input integer.
     Methods:
         __init__(self, width: int, height: int, x=0, y=0, id=None)
-        height(self)
-        height(self, value)
-        width(self)
-        width(self, value)
-        x(self)
-        x(self, value)
-        y(self)
-        y(self, value)
+        height(self) -> getter
+        height(self, value) -> setter
+        width(self) -> getter
+        width(self, value) -> setter
+        x(self) -> getter
+        x(self, value) -> setter
+        y(self) -> getter
+        y(self, value) -> setter
+        area(self) 
+        display(self):
+        __str__(self)
+        update(self, *args, **kwargs)
+        to_dictionary(self)
     """
     def __init__(self, width: int, height: int, x=0, y=0, id=None):
         """Initialization method.
@@ -130,3 +135,13 @@ class Rectangle(Base):
             for k, v in kwargs.items():
                 setattr(self, k, v)
         return None
+
+    def to_dictionary(self):
+        """Dictionary representation."""
+        D = dict()
+        D["id"] = self.id
+        D["width"] = self.width
+        D["height"] = self.height
+        D["x"] = self.x
+        D["y"] = self.y
+        return D
