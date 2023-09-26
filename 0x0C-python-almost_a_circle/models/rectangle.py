@@ -21,7 +21,7 @@ class Rectangle(Base):
         x(self, value) -> setter
         y(self) -> getter
         y(self, value) -> setter
-        area(self) 
+        area(self)
         display(self):
         __str__(self)
         update(self, *args, **kwargs)
