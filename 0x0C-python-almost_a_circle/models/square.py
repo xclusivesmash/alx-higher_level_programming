@@ -15,6 +15,7 @@ class Square(Rectangle):
         __str__(self)
         size(self) -> getter
         size(self, value) -> setter
+        update(self, *args, **kwargs)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -42,4 +43,23 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+        return None
+
+    def update(self, *args, **kwargs):
+        """Update object attributes."""
+        if args is not None and len(args) != 0:
+            # working with args
+            for i, _ in enumerate(args):
+                if (i + 1) == 1:
+                    self.id = args[i]
+                elif (i + 1) == 2:
+                    self.size = args[i]
+                elif (i + 1) == 3:
+                    self.x = args[i]
+                elif (i + 1) == 4:
+                    self.y = args[i]
+        else:
+            # working with kwargs
+            for k, v in kwargs.items():
+                setattr(self, k, v)
         return None
