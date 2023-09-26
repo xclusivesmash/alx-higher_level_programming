@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module: base"""
 import json
+import csv
 
 
 class Base:
@@ -13,6 +14,9 @@ class Base:
         save_to_file(cls, list_objs)
         from_json_string(json_string)
         create(cls, **dictionary)
+        load_from_file(cls)
+        save_to_file_csv(cls, list_objs)
+        load_from_file_csv(cls)
     """
     # constants
     __nb_objects = 0
@@ -64,3 +68,47 @@ class Base:
             dummy = cls(1)
         dummy.update(args=None, kwargs=dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns list of instances."""
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename, mode="r", encoding="utf-8") as f:
+                my_list = cls.from_json_string(f.read())
+        except Exception as e:
+            return []
+        return [cls.create(**x) for x in my_list]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """CSV serialization method."""
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode='w', newline='') as f:
+            w = csv.writer(f)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    w.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                if cls.__name__ == "Square":
+                    w.writerow([obj.id, obj.size, obj.x, obj.y])
+        return None
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """CSV deserialization method."""
+        my_list = []
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode="r", encoding="utf-8", newline="") as f:
+            r = csv.reader(f)
+            square = ["id", "size", "x", "y"]
+            rectangle = ["id", "width", "height", "x", "y"]
+            for line in r:
+                objects = {}
+                if cls.__name__ == "Rectangle":
+                    for x, y in zip(rectangle, line):
+                        objects[x] = y
+                elif cls.__name__ == "Square":
+                    for x, y in zip(rectangle, line):
+                        objects[x] = y
+                my_list.append(cls.create(**objects))
+        return my_list
