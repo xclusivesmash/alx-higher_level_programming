@@ -16,6 +16,7 @@ class Square(Rectangle):
         size(self) -> getter
         size(self, value) -> setter
         update(self, *args, **kwargs)
+        to_dictionary(self)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -63,3 +64,12 @@ class Square(Rectangle):
             for k, v in kwargs.items():
                 setattr(self, k, v)
         return None
+
+    def to_dictionary(self):
+        """Dictionary representation."""
+        D = dict()
+        D["id"] = self.id
+        D["size"] = self.size
+        D["x"] = self.x
+        D["y"] = self.y
+        return D
