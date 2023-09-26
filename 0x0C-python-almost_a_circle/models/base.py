@@ -12,6 +12,7 @@ class Base:
         to_json_string(list_dictionaries)
         save_to_file(cls, list_objs)
         from_json_string(json_string)
+        create(cls, **dictionary)
     """
     # constants
     __nb_objects = 0
@@ -53,3 +54,13 @@ class Base:
         if json_string is None:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Update instance attributes."""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 5)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        dummy.update(args=None, kwargs=dictionary)
+        return dummy
