@@ -13,7 +13,7 @@ class Base:
     __nb_objects = 0
 
     # initialization
-    def __init__(self, id=None):
+    def __init__(self, id: int = None):
         """Initialization method.
         Attributes:
             id (int): identification for each instance."""
