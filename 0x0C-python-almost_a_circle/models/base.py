@@ -11,6 +11,7 @@ class Base:
         __init__(self, id=None)
         to_json_string(list_dictionaries)
         save_to_file(cls, list_objs)
+        from_json_string(json_string)
     """
     # constants
     __nb_objects = 0
@@ -45,3 +46,10 @@ class Base:
                 json_objs = cls.to_json_string(json_objs)
                 f.write(json_objs)
         return None
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Deserialization process."""
+        if json_string is None:
+            return []
+        return json.loads(json_string)
