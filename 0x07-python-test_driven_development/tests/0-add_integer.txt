@@ -1,0 +1,78 @@
+DESCRIPTION: 
+  Test different cases to test function's efficiancy.
+
+HOW TO URN THE TEST IN COMMAND LINE:
+  `$ python3 -m doctest -v ./tests/0-add_integer.txt | tail -2`
+
+1. IMPORT METHOD TO TEST:
+  >>> add_integer = __import__('0-add_integer').add_integer
+
+2. TEST CASES CONSIDERED:
+
+Test for when both a and b integers:
+    >>> print(add_integer(a=1, b= 98))
+    99
+    >>> print(add_integer(a=-1, b= 98))
+    97
+    >>> print(add_integer(a=-1))
+    97
+
+Test for when a int and b float or vice versa:
+    >>> print(add_integer(a=1, b=8.5))
+    9
+    >>> print(add_integer(a=1.15, b=8))
+    9
+
+Test for when a int and b not int or float and vice versa:
+    >>> print(add_integer(a=1, b=[]))
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+    >>> print(add_integer(a=1, b="string"))
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Test for when other data types are passed to the function:
+    >>> print(add_integer(a="string", b={'a': 54, 's': "hey"}))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Test for when nothing is passed to the function:
+    >>> print(add_integer())
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test for either a or b None:
+    >>> print(add_integer(a=None))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+    >>> print(add_integer(None, None))
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Test for too many input args passed to function:
+    >>> print(add_integer(4, 45, 98))
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test for max/min number that Python can handle:
+    >>> print(add_integer(float("inf")))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+    >>> print(add_integer(float("-inf")))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test for NaN in Python:
+    >>> print(add_integer(float("NaN")))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer

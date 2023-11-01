@@ -1,0 +1,57 @@
+DESCRIPTION: 
+        Test different cases to test function's efficiency.
+
+HOW TO URN THE TEST IN COMMAND LINE:
+        `$ python3 -m doctest -v ./tests/5-text_indentation.txt`
+
+1. IMPORT METHOD TO TEST:
+        >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+2. TEST CASES CONSIDERED:
+
+Test for when text is of different type:
+        >>> text_indentation(1.5)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+        >>> text_indentation([])
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Test for when nothing is passed to the function:
+        >>> text_indentation()
+        Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test for when text is None:
+        >>> text_indentation(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Test for when too many input args passed to function:
+        >>> text_indentation("Hey", 4, 8)
+        Traceback (most recent call last):
+        ...
+        TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+Test for when True or False are passed to function:
+        >>> text_indentation(True)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Test for when text is a corrent data type:
+        >>> text_indentation("   A B.     C D?      E F:     G H     ")
+        A B.
+        <BLANKLINE>
+        C D?
+        <BLANKLINE>
+        E F:
+        <BLANKLINE>
+        G H
+
+        >>> text_indentation("      Hello      ")
+        Hello
