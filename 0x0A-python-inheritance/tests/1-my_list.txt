@@ -1,0 +1,39 @@
+DESCRIPTION: None
+
+HOW TO URN THE TEST IN COMMAND LINE:
+  `$ python3 -m doctest -v ./tests/1-my_list.txt | tail -2`
+
+1. IMPORT METHOD TO TEST:
+  >>> MyList = __import__('1-my_list').MyList
+
+2. TEST CASES CONSIDERED:
+
+Test if you can create a Mylist object with integers:
+    >>> mylist = MyList()
+    >>> mylist.append(1)
+    >>> mylist.append(125)
+    >>> mylist.append(-8)
+    >>> mylist.append(0)
+    >>> print(mylist)
+    [1, 125, -8, 0]
+    >>> mylist.print_sorted()
+    [-8, 0, 1, 125]
+
+Test for when MyList is empty:
+    >>> M = MyList()
+    >>> print(M)
+    []
+
+Test type, issubclass, and isinstance for MyList:
+    >>> type(mylist)
+    <class '1-my_list.MyList'>
+    >>> isinstance(mylist, list)
+    True
+    >>> issubclass(MyList, list)
+    True
+    >>> issubclass(M, list)
+    Traceback (most recent call last):
+    ...
+    TypeError: issubclass() arg 1 must be a class
+    >>> isinstance(M, MyList)
+    True
