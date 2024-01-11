@@ -18,7 +18,7 @@
 
 ## Requirements
 - Allowed editors: `vi`, `vim`, or `emacs`
-- OS: `Ubuntu 20.04 LTS` using `MySQL 8.0` (version 8.0.25)
+- OS: `Ubuntu 20.04 LTS` using `MySQL 8.0` (version 8.0.35)
 - The length of all files will be tested using `wc`
 - All SQL keywords should be in uppercase
 
