@@ -8,6 +8,7 @@
 - OS: `Ubuntu 20.04 LTS` using `node` (version 14.x)
 - The first line of each script should be exactly `#!/usr/bin/node`
 - Code compliance: `semistandard` [Rules of standard](https://intranet.alxswe.com/rltoken/1T1yg1vOAChRN20Yyz8crw)
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 ## Author
 * Siphamandla Matshiane, [![Twitter](http://i.imgur.com/wWzX9uB.png)](https://twitter.com/sbumatshiane916)
