@@ -13,7 +13,7 @@
 [![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 ## Author
-* Siphamandla Matshiane, [![Twitter](http://i.imgur.com/wWzX9uB.png)](https://twitter.com/sbumatshiane916)
+* Siphamandla Matshiane, [![Twitter](https://uxwing.com/x-social-media-logo-icon/)](https://twitter.com/sbumatshiane916)
 
 ## LICENSE
 [ALX Software Engineering](https://www.alxafrica.com/software-engineering/)
