@@ -8,17 +8,6 @@
 - OS: `Ubuntu 20.04 LTS` using `node` (version 14.x)
 - The first line of each script should be exactly `#!/usr/bin/node`
 - Code compliance: `semistandard` [Rules of standard](https://intranet.alxswe.com/rltoken/1T1yg1vOAChRN20Yyz8crw)
-- All files are executables.
-
-## Installation
-- To install node 14:
-```$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
-```
-
-- Semistandard:
-```$ sudo npm install semistandard --global
-```
 
 ## Author
 * Siphamandla Matshiane, [![Twitter](http://i.imgur.com/wWzX9uB.png)](https://twitter.com/sbumatshiane916)
