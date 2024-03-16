@@ -13,7 +13,7 @@
 [![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 
 ## Author
-* Siphamandla Matshiane, [![Twitter](https://media.licdn.com/dms/image/D4E12AQHGw13XBj2AIg/article-cover_image-shrink_720_1280/0/1691411078415?e=2147483647&v=beta&t=vc2gjXwZficFVKaUyK_h84xWfNATOWS4GuqRscwdGyE)](https://twitter.com/sbumatshiane916)
+* Siphamandla Matshiane, [![Twitter](https://www.google.com/url?sa=i&url=https%3A%2F%2Fuxwing.com%2Fx-social-media-logo-icon%2F&psig=AOvVaw1cCBF5JAvVkp_28qHk3CMN&ust=1710699656890000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKjUkf2y-YQDFQAAAAAdAAAAABAE)](https://twitter.com/sbumatshiane916)
 
 ## LICENSE
 [ALX Software Engineering](https://www.alxafrica.com/software-engineering/)
