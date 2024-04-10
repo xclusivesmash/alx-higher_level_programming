@@ -5,7 +5,7 @@
 
 ## Requirements
 - OS: `Ubuntu 20.04 LTS`
-- Language(s): `Python 3.x`
+- Language(s): `Python 3.x`.
 - Editors allowed: `vi`, `vim`, or `emacs`.
 - The first line of every code should contain the line: `#!/usr/bin/python3` for intepreting purposes across systems.
 - For testing, `pycodestyle` can be used (version: 2.8 or higher).
