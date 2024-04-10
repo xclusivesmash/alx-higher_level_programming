@@ -1,0 +1,70 @@
+DESCRIPTION: 
+        Test different cases to test function's efficiency.
+
+HOW TO URN THE TEST IN COMMAND LINE:
+        `$ python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2`
+
+1. IMPORT METHOD TO TEST:
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+2. TEST CASES CONSIDERED:
+
+Test for when first_name and last_name are both strings:
+        >>> say_my_name("John", "Smith")
+        My name is John Smith
+
+Test for when one is string and the other is not, and vice versa:
+        >>> say_my_name(first_name=0, last_name="")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+        >>> say_my_name(first_name="Oleck", last_name={})
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+Test for when first_name and last_name are of different types except for strings:
+        >>> say_my_name(first_name=14, last_name={})
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+        >>> say_my_name(first_name='h', last_name=[1, 2, 5])
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+        >>> say_my_name(first_name=[], last_name=[1, "Ola", 5])
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Test for when nothing is passed to the function:
+        >>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test for either first_name or last_name None:
+        >>> say_my_name(first_name=None, last_name="Smith")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+        >>> say_my_name(first_name="David", last_name=None)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+Test for when too many input args passed to function:
+        >>> say_my_name("John", "Smith", {}, 28)
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() takes from 1 to 2 positional arguments but 4 were given
+
+Test for when True and False are passed to function:
+        >>> say_my_name(True, False)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Test for when one input argument if given:
+        >>> say_my_name("David")
+        My name is David 
