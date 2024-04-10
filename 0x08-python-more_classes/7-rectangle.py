@@ -12,6 +12,9 @@ class Rectangle:
         width (int): input width.
         height (int): input height.
     """
+    # constants
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0) -> None:
         """Initialization method
@@ -22,6 +25,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -59,4 +63,35 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+        return None
+
+    def area(self):
+        """Returns the rectangle area"""
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """Returns the rectangle perimeter"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (2 * self.__height) + (2 * self.__width)
+
+    def __str__(self) -> str:
+        """Return string representation of object"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        string = ""
+        for _ in range(self.__height):
+            string = string + str(self.print_symbol) * self.__width
+            if _ != (self.__height - 1):
+                string = string + "\n"
+        return string
+
+    def __repr__(self) -> str:
+        """Return string rep of object"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """object destructor"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
         return None

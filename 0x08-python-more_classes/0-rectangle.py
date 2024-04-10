@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Module: 0-rectangle
-Description: Definition of rectangle as a class.
+Class name: Rectangle
+Used to create rectangles based on width and height.
 """
 
 
 class Rectangle:
-    "An empty class defining a rectangle"
+    """Empty class"""
     pass
