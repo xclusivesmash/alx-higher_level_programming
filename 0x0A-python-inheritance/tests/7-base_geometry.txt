@@ -1,0 +1,74 @@
+DESCRIPTION: None
+
+HOW TO RUN THE TEST IN COMMAND LINE:
+    `$ python3 -m doctest -v ./tests/7-base_geometry.txt | tail -2`
+
+1. IMPORT METHOD TO TEST:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+2. TEST CASES CONSIDERED:
+
+Test for integers greater than 0:
+    >>> a = BaseGeometry()
+    >>> a.integer_validator("a", 10)
+
+Test for area method:
+    >>> a.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+Test for integers less than or equal to 0:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("b", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: b must be greater than 0
+    >>> c = BaseGeometry()
+    >>> c.integer_validator("c", -25)
+    Traceback (most recent call last):
+    ...
+    ValueError: c must be greater than 0
+
+Test for different data types except ints:
+    >>> d = BaseGeometry()
+    >>> d.integer_validator("d", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: d must be an integer
+    >>> e = BaseGeometry()
+    >>> e.integer_validator("e", "checkmate!")
+    Traceback (most recent call last):
+    ...
+    TypeError: e must be an integer
+    >>> f = BaseGeometry()
+    >>> f.integer_validator("f", [1, 2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: f must be an integer
+    >>> g = BaseGeometry()
+    >>> g.integer_validator("g", (1, 2, 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: g must be an integer
+    >>> h = BaseGeometry()
+    >>> h.integer_validator("h", {"key": 1})
+    Traceback (most recent call last):
+    ...
+    TypeError: h must be an integer
+    >>> mm = BaseGeometry()
+    >>> mm.integer_validator("mm", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: mm must be an integer
+
+Test for invalid number of arguments:
+    >>> k = BaseGeometry()
+    >>> k.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    >>> k.integer_validator("k")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
