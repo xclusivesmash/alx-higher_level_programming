@@ -26,6 +26,7 @@
 - Files are executed using `node` (version 14.x)
 - OS: `Ubuntu 20.04 LTS`
 - Style Guide: `semistandard` (version 16.x.x) [check here](https://intranet.alxswe.com/rltoken/1T1yg1vOAChRN20Yyz8crw)
+- [![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
 - The first line of all files should be exactly `#!/usr/bin/node`
 - All files should be executables.
 - Length of files is tested using `wc` executable.
