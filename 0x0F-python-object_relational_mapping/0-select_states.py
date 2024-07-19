@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module: 0-select_states
 Description: Manipulating databases using MySQLdb
@@ -8,6 +8,9 @@ import sys
 
 
 if __name__ == "__main__":
+    """
+    List all states in the database in ASC order.
+    """
     arguments = sys.argv
     user_ = arguments[1]
     passwd_ = arguments[2]
