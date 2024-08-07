@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 /* updates contents of the header element */
-$('div#update_header').click(function () {
-    $('header').text('New Header!!!');
-  });
+const $ = window.$;
+$('DIV#update_header').click(function () {
+  $('header').text('New Header!!!');
+});
