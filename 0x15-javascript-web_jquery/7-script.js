@@ -1,5 +1,7 @@
+#!/usr/bin/env node
 /* fetches an attribite from a url */
-let url = 'https://swapi.co/api/people/5/?format=json';
-$.get(url, function (data, stat) {
-  $('div#character').text(data.name);
+const $ = window.$;
+const url = 'https://swapi-api.hbtn.io/api/people/5/?format=json';
+$.get(url, function (data) {
+  $('DIV#character').text(data.name);
 });
