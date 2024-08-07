@@ -1,8 +1,10 @@
+#!/usr/bin/env node
 /* fetches and lists titles of movies */
-let URL = 'https://swapi.co/api/films/?format=json';
+const $ = window.$;
+const URL = 'https://swapi-api.hbtn.io/api/films/?format=json';
 $.get(URL, function (data) {
-  let movies = data.results;
-  for (let movie of movies) {
-    $('ul#list_movies').append(`<li>${movie.title}</li>`);
-  }
+  const res = data.results;
+  $.each(res, function (key, value) {
+    $('UL#list_movies').append('<li>' + value.title + '</li>');
+  });
 });
